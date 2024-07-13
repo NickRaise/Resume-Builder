@@ -6,7 +6,7 @@ import { registerUser, loginUser } from "./controllers/userController.js";
 
 // console.log(process.env.main)
 app.use(express.json());
-// app.use(express.urlencoded());
+app.use(express.urlencoded());
 
 async function connectDB() {
     await mongoose.connect("mongodb://localhost:27017/Resume-Builder");
