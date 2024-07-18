@@ -9,7 +9,7 @@ const Signup = () => {
                 <div className="flex mb-5 items-center justify-center ">
                     <img src={Logo} width={100} height={120} alt="" />
                 </div>
-                <form action="http://localhost:3000/register" method="post">
+                <form action="http://localhost:3000/api/user/register" method="post">
                     <h1 className="text-5xl font-semibold">
                         Create an account
                     </h1>

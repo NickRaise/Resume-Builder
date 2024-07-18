@@ -6,7 +6,7 @@ export const Form = () => {
   return (
     <div className='bg-white px-10 py-20 rounded-3xl border-2 border-gray-100'>
         <div className='flex mb-5 items-center justify-center '><img src={Logo} width={100} height={120} alt="" /></div>
-        <form action="http://localhost:3000/login" method='post'>
+        <form action="http://localhost:3000/api/user/login" method='post'>
        <h1 className='text-5xl font-semibold'>Welcome Back</h1> 
        <p className='font-medium text-lg text-gray-500 mt-4'>Please Enter Your Details</p>
        <div className='mt-8'>

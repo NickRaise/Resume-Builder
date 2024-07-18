@@ -2,11 +2,14 @@ import express from "express";
 import mongoose from "mongoose";
 const app = express();
 import "dotenv/config";
-import { registerUser, loginUser } from "./controllers/userController.js";
+import userRoutes from "./routes/userRoutes.js"
+
+const port = process.env.PORT;
 
 // console.log(process.env.main)
 app.use(express.json());
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }));
+
 
 async function connectDB() {
     await mongoose.connect("mongodb://localhost:27017/Resume-Builder");
@@ -19,9 +22,8 @@ app.get("/", (req, res) => {
     res.send("Hello World!");
 });
 
-app.post("/register", registerUser);
-app.post("/login", loginUser);
+app.use("/api/user", userRoutes);
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log(`Example app listening on port 3000`);
 });
